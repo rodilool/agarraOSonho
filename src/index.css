@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.landing{
+  overflow-x: hidden;
+  background-image: url('public\pics\istockphoto-901157728-2048x2048.jpg');
+  height: 100vh;
+  width: 100vw;
+}

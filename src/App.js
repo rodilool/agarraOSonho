@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './nav/nav';
 
 function App() {
   return (
+    
     <div className='landing'>
-      <h1>Hello World!</h1>
+      <Nav />
     </div>
   );
 }

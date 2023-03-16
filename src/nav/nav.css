@@ -1,0 +1,42 @@
+nav{
+    align-items: center;
+    display: flex;
+    background-color: rgb(255, 203, 34);
+    border-bottom: 3px solid whitesmoke;
+}
+h1{
+    font-size: 2rem;
+    color: rgb(47, 47, 47);
+    margin-left: 2rem;
+}
+a{
+    text-decoration: none;
+}
+.navigation{
+    width: 100vw;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.navigation ul{
+    margin-right: 3rem;
+}
+
+.navigation ul a li{
+    display: inline-flex;
+    text-decoration: none;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    color: rgb(47, 47, 47);
+}
+
+.navigation ul a li:hover {
+    color: rgba(255, 255, 255, 0.59);
+    transition: 0.3s ease-in 0.1s;
+}

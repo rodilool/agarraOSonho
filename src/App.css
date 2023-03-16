@@ -1,14 +1,72 @@
+
 html{
   font-size: 16px;
 }
+.themeLogo{
+  width: 30px;
+  height: auto;
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
 
+.Dark{
+  background-color: rgb(62, 62, 62);
+  color: whitesmoke;
+}
+.Light{
+  background-color: rgb(232, 232, 232);
+  color: black;
+}
+.Light a{
+  color: black;
+}
+.Dark a{
+  color: whitesmoke;
+}
 .landing{
   overflow-x: hidden;
-  background-image: url('C:\codeacademy\agarra-o-sonho\public\pics\istockphoto-901157728-2048x2048.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  aspect-ratio: 16/9;
   height: 100vh;
   width: 100vw;
+}
+
+nav{
+  align-items: center;
+  display: flex;
+}
+h1{
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+a{
+  text-decoration: none;
+}
+.navigation{
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navigation ul{
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+
+}
+
+.navigation ul a li{
+  display: inline-flex;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.navigation ul a li:hover {
+  transition: 0.3s ease-in 0.1s;
 }

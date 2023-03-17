@@ -1,25 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav, {clickChangeTheme} from './nav/nav';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import sunLogo from './pics/sun.png';
 import moonLogo from './pics/crescent-moon.png';
+import { clear } from '@testing-library/user-event/dist/clear';
 
 function App() {
-  const [theme, setTheme] = useState('Light');
   
+  
+  const [theme, setTheme] = useState('Light');
+  // localStorage.clear()
   const clickChangeTheme = () => {
-    if (theme === 'Light') {
+    if(theme === 'Light') {
       setTheme('Dark')
-    } else if(theme === 'Dark'){
+      localStorage.setItem('theme', JSON.stringify(theme))
+    } else {
       setTheme('Light')
+      localStorage.setItem('theme', JSON.stringify(theme))
     }
   }
+
+  let storedTheme = localStorage.getItem('theme');
+  let saveTheme = JSON.parse(storedTheme);
+  let idk;
+
+  if (!saveTheme) {
+    idk = theme
+  } else {
+    idk = saveTheme
+  }
   
-  const themeIcon = theme === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
+
+  const themeIcon = idk === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
 
   return (   
-    <div className={`landing ${theme}`} >
+    <div className={`landing ${idk}`} >
         <nav>
             <div>
                 <h1>AgarraOSonho</h1>
@@ -27,11 +43,13 @@ function App() {
             <div>
                 <div className="navigation">
                     <ul>
-                        <p>{theme} Theme</p>
+                      <div className='changeTheme' onClick={clickChangeTheme}> 
+                        <p>{idk} Theme</p>
                         {themeIcon}
-                        <a href='#'><li>Home</li></a>
-                        <a href='#'><li>Preços</li></a>
-                        <a href='#'><li>Contacto</li></a>
+                      </div>
+                        <a href='#' className='firstNav'><li>Home</li></a>
+                        <a href='#' className='middleNav'><li>Preços</li></a>
+                        <a href='#' className='lastNav'><li>Contacto</li></a>
                     </ul>
                 </div>
             </div>

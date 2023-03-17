@@ -6,6 +6,9 @@ import moonLogo from './pics/crescent-moon.png';
 import { clear } from '@testing-library/user-event/dist/clear';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import Welcome from './Components/welcome';
+
+
 function App() {
 
   const [theme, setTheme] = useState('Light');
@@ -31,10 +34,11 @@ function App() {
         <div className={`landing ${saveTheme} backGround`}> 
         <nav>
             <div>
-                <h1>AgarraOSonho</h1>
+                
             </div>
             <div>
                 <div className="navigation">
+                    <h1>AgarraOSonho</h1>
                     <ul>
                       <div className='changeTheme' onClick={clickChangeTheme}> 
                         <p>{saveTheme} Theme</p>
@@ -47,6 +51,9 @@ function App() {
                 </div>
             </div>
         </nav>
+        <body>
+          <Welcome className='center'/>
+        </body>
         </div>
     </Router>
   );

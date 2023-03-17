@@ -1,13 +1,26 @@
-
+/* all */
 html{
   font-size: 16px;
 }
+
+h1{
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Dark and Light diffences general*/
+
 .themeLogo{
   width: 30px;
   height: 30px;
   margin-right: 2rem;
   margin-left: 1rem;
 }
+
 .changeTheme{
   display: inline-flex;
   align-items: center;
@@ -15,76 +28,66 @@ html{
   -webkit-user-select: none;
   user-select: none;
 }
+
 .changeTheme .themeLogo{
-  aspect-ratio:  1 / 1;
   width: 30px;
   height: 30px;
   margin-right: 2rem;
   margin-left: 1rem;
+  orientation: portrait;
 }
+
+/* media queries for all background svg */
+@media (min-aspect-ratio:16/9) and (orientation: landscape) {
+  .Dark{background-image: url('./pics/blurry-gradient-haikei-16-9.svg');}
+}
+
+@media (min-aspect-ratio:1/1) and (orientation: landscape) {
+  .Dark{background-image: url('./pics/blurry-gradient-haikei-1-1.svg');}
+}
+
+@media (min-aspect-ratio:9/16) and (orientation: portrait) {
+  .Dark{background-image: url('./pics/blurry-gradient-haikei-9-16.svg');}
+}
+@media (min-aspect-ratio:1/2) and (orientation: portrait) {
+  .Dark{background-image: url('./pics/blurry-gradient-haikei-1-2.svg');}
+}
+@media (min-aspect-ratio:1/4) and (orientation: portrait) {
+  .Dark{background-image: url('./pics/blurry-gradient-haikei-1-4.svg');}
+}
+
 .Dark{
-  background-color: rgb(62, 62, 62);
+  
   color: whitesmoke;
-  /* transition: 500ms ease-out,
-  background-color 1s ease-out; */
+  transition: 750ms ease-out,
+  background-image 0.05s ease-out;
 }
+
 .Light{
-  background-color: rgb(232, 232, 232);
+  background-image: url('./pics/light_gradient.svg');
   color: black;
-  /* transition: 500ms ease-out,
-              background-color 1s ease-out; */
+  transition: 750ms ease-out,
+              background-image 0.05s ease-out;
 }
+
 .Light a{
   color: black;
+  transition: 750ms ease-out;
 }
+
 .Dark a{
   color: whitesmoke;
-}
-.landing{
-  overflow-x: hidden;
-  height: 100vh;
-  width: 100vw;
+  transition: 750ms ease-out;
 }
 
-nav{
-  align-items: center;
-  display: flex;
-}
-h1{
-  font-size: 2rem;
-  margin-left: 2rem;
-}
-a{
-  text-decoration: none;
-}
-.navigation{
-  width: 100vw;
-  left: 0;
-  top: 0;
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  flex-direction: row;
+/* Light and Dark landing page  */
+.Dark .navigation ul a li:hover{
+  color: rgba(245, 245, 245, 0.452);
 }
 
-.navigation ul{
-  margin-right: 3rem;
-  width: 30vw;
-  display: flex;
-  
-  align-items: center;
+.Light .navigation ul a li:hover{
+  color: rgba(0, 0, 0, 0.452);
 }
-.navigation a {
-  padding: 0 1.5rem;
-}
-.navigation ul a li{
-  text-decoration: none;
-  flex-direction: column;
-  padding: 0.5rem;
-  font-size: 1.25rem;
-}
-
 .Dark .firstNav{
   border-right: 2px solid rgba(255, 255, 255, 0.116);
   border-left: 2px solid rgba(255, 255, 255, 0.116);
@@ -103,3 +106,56 @@ a{
 .navigation ul a li:hover {
   transition: 0.3s ease-in 0.1s;
 }
+/* landing page specifi */
+
+.backGround {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.landing{
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navigation{
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navigation ul{
+  margin-right: 3rem;
+  width: 100vw;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: end;
+}
+
+.navigation a {
+  padding: 0 1.5rem;
+}
+
+.navigation ul a li{
+  text-decoration: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+
+nav{
+  align-items: center;
+  display: flex;
+}
+
+
+

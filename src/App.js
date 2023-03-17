@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav, {clickChangeTheme} from './nav/nav';
 import React, { useEffect, useState } from 'react';
 import sunLogo from './pics/sun.png';
 import moonLogo from './pics/crescent-moon.png';
 import { clear } from '@testing-library/user-event/dist/clear';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
-  
-  
+
   const [theme, setTheme] = useState('Light');
   // localStorage.clear()
   const clickChangeTheme = () => {
@@ -23,19 +22,13 @@ function App() {
 
   let storedTheme = localStorage.getItem('theme');
   let saveTheme = JSON.parse(storedTheme);
-  let idk;
 
-  if (!saveTheme) {
-    idk = theme
-  } else {
-    idk = saveTheme
-  }
-  
 
-  const themeIcon = idk === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
+  const themeIcon = saveTheme === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
 
   return (   
-    <div className={`landing ${idk}`} >
+    <Router >
+        <div className={`landing ${saveTheme} backGround`}> 
         <nav>
             <div>
                 <h1>AgarraOSonho</h1>
@@ -44,7 +37,7 @@ function App() {
                 <div className="navigation">
                     <ul>
                       <div className='changeTheme' onClick={clickChangeTheme}> 
-                        <p>{idk} Theme</p>
+                        <p>{saveTheme} Theme</p>
                         {themeIcon}
                       </div>
                         <a href='#' className='firstNav'><li>Home</li></a>
@@ -54,7 +47,8 @@ function App() {
                 </div>
             </div>
         </nav>
-    </div>
+        </div>
+    </Router>
   );
 }
 export default App;

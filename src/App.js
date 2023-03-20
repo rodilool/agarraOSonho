@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react';
 import sunLogo from './pics/sun.png';
 import moonLogo from './pics/crescent-moon.png';
 import { clear } from '@testing-library/user-event/dist/clear';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Switch, NavLink } from 'react-router-dom';
 
-import Welcome from './Components/welcome';
+import Welcome from './Components/welcome/welcome';
+import Contacts from './Components/contacts/contacts';
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
   const themeIcon = saveTheme === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
 
   return (   
-    <Router >
-        <div className={`landing ${saveTheme} backGround`}> 
+        <div> 
+        <div className={`landing ${saveTheme} backGround`}>
         <nav>
             <div>
                 
@@ -44,18 +45,20 @@ function App() {
                         <p>{saveTheme} Theme</p>
                         {themeIcon}
                       </div>
-                        <a href='#' className='firstNav'><li>Home</li></a>
-                        <a href='#' className='middleNav'><li>Preços</li></a>
-                        <a href='#' className='lastNav'><li>Contacto</li></a>
+                        <a to='./' exact className='firstNav'><li>Home</li></a>
+                        <a to='./prices' className='middleNav'><li>Preços</li></a>
+                        <a to='./contactos' className='lastNav'><li>Contacto</li></a>
                     </ul>
                 </div>
             </div>
         </nav>
-        <body>
-          <Welcome className='center'/>
-        </body>
+         <Welcome />
         </div>
-    </Router>
+          <div className={`contacts ${saveTheme}`}>
+            <Contacts theme={saveTheme}/>
+          </div>
+        
+        </div>
   );
 }
 export default App;

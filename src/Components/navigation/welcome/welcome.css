@@ -1,11 +1,9 @@
 .WelcomePage{
     display: flex;
     width: 100vw;
-    min-height: 500px;
-    max-height: 1000px;
+height: 100vh;
     align-items: center;
     justify-content: center;
-    margin-top: 15vh;
 }
 
 .aboutUs{
@@ -14,12 +12,13 @@
     min-width: 55%;
     max-width: 65%;
     justify-content: center;
+    align-items:center;
     overflow: visible;
 }
 
 .WelcomePage img{
     /* min-width: 46.8rem; */
-    min-width: 750px;
+    max-width: 750px;
     max-height: 600px;
     margin-right: -100px;
     height: auto;

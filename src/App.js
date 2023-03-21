@@ -6,7 +6,7 @@ import moonLogo from './pics/crescent-moon.png';
 import { clear } from '@testing-library/user-event/dist/clear';
 import { BrowserRouter as Router, Route, Routes, Switch, NavLink } from 'react-router-dom';
 
-import Welcome from './Components/welcome/welcome';
+import Welcome from './Components/navigation/welcome/welcome';
 import Contacts from './Components/contacts/contacts';
 
 
@@ -31,30 +31,29 @@ function App() {
   const themeIcon = saveTheme === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
 
   return (   
-        <div> 
-        <div className={`landing ${saveTheme} backGround`}>
+        <div className={`landing-${saveTheme} ${saveTheme} backGround`}>  
+        <div>
         <nav>
             <div>
                 
             </div>
-            <div>
-                <div className="navigation">
+                <div className={`navigation-${saveTheme}`}>
                     <h1>AgarraOSonho</h1>
                     <ul>
                       <div className='changeTheme' onClick={clickChangeTheme}> 
                         <p>{saveTheme} Theme</p>
                         {themeIcon}
                       </div>
-                        <a to='./' exact className='firstNav'><li>Home</li></a>
-                        <a to='./prices' className='middleNav'><li>Preços</li></a>
-                        <a to='./contactos' className='lastNav'><li>Contacto</li></a>
+                        <a href='#home' className='firstNav'><li>Home</li></a>
+                        <a to='./prices' className='middleNav'><li>Portofolio</li></a>
+                        <a href='#contacts' className='lastNav'><li>Contacto</li></a>
                     </ul>
                 </div>
-            </div>
+
         </nav>
          <Welcome />
         </div>
-          <div className={`contacts ${saveTheme}`}>
+          <div className={`contacts ${saveTheme} backGround`}>
             <Contacts theme={saveTheme}/>
           </div>
         

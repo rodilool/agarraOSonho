@@ -10,8 +10,8 @@
 }
 .contacts h2{
     font-size: 3rem;
-    margin-top: 2rem;
-    margin-bottom: -1rem;
+    margin-top: 5rem;
+    margin-bottom: -2rem;
 }
 .center{
     display: flex;
@@ -19,8 +19,19 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+    margin-bottom: 5rem;
   }
-  
+  .usContact{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  .usContact h3{
+    font-size: 1.75rem;
+    place-self: top;
+  }
   .socials, .form{
     display: flex;
     justify-content: center;
@@ -33,8 +44,13 @@
     border-left: 2px solid rgba(59, 59, 59, 0.301);
     flex-direction: column;
     justify-content: center;
+    margin-top: -5rem;
   }
-
+  .socials h3{
+    
+    font-size: 1.75rem;
+    place-self: top;
+  }
   .form{
     align-items: center;
   }
@@ -44,8 +60,59 @@ form{
     align-items: center;
     flex-direction: column;
 }
-#Name{
+#form{
     padding: 0.5rem;
     margin-top: 1rem;
-    width: 40%;
+    width: 100%;
+}
+.horizontal{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.horizontal label{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+input{
+  width: 100%;
+  border-radius: 5px;
+  border: 1.5px solid black;
+}
+
+.submit-button{
+  padding: 1rem;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+.submit-button:hover{
+  background: radial-gradient(circle, rgba(160, 160, 160, 0.8) 0%, rgba(68, 68, 68, 0.8) 100%);
+  cursor: pointer;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.logo img{
+  height: 50px;
+  width: auto;
+  padding: 1rem;
+}
+.logo p{
+  background: rgb(233,233,233);
+  background: radial-gradient(circle, rgba(233,233,233,.8) 0%, rgba(138,138,138,.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: bold;
+  letter-spacing: .05rem;
+}
+.logo:hover{
+  color: transparent;
+  cursor: pointer;
 }

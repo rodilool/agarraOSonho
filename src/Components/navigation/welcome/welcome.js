@@ -5,7 +5,7 @@ import workerImage from 'C:/codeacademy/agarra-o-sonho/src/pics/industrial_worke
 export default class Welcome extends Component {
   render() {
     return (
-      <div className='WelcomePage'>
+      <div id='home' className='WelcomePage'>
             <div className='aboutUs'>
                 <div>
                     <h2>Quem somos nós?</h2>

@@ -1,0 +1,11 @@
+.footing{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footing p{
+    margin: 50px;
+
+}

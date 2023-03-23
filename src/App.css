@@ -7,6 +7,7 @@ html{
 h1{
   font-size: 2rem;
   margin-left: 2rem;
+  z-index: 9999;
 }
 
 a{
@@ -33,6 +34,7 @@ a{
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
+  font-weight: bold;
 }
 
 .changeTheme .themeLogo{
@@ -75,16 +77,21 @@ a{
   background-repeat: no-repeat;
   background-size: cover;
 }
-.Dark{
-  
+.text-Dark{
   color: whitesmoke;
+  transition: 750ms ease-out;
+}
+.Dark{
   transition: 750ms ease-out,
   background-image 0.05s ease-out;
 }
 
+.text-Light{
+  color: black;
+  transition: 750ms ease-out;
+}
 .Light{
   background-image: url('./pics/light_gradient.svg');
-  color: black;
   transition: 750ms ease-out,
               background-image 0.05s ease-out;
 }
@@ -145,6 +152,7 @@ a{
   justify-content: end;
   align-items: center;
   flex-direction: row;
+  z-index: 9999;
 }
 .navigation-Light{
   max-width: 100vw;
@@ -155,6 +163,7 @@ a{
   justify-content: end;
   align-items: center;
   flex-direction: row;
+  z-index: 9999;
 }
 
 
@@ -183,14 +192,16 @@ a{
   justify-content: end;
 }
 
-.navigation-Dark a {
+.navigation-Dark a, .navigation-Light a{
   padding: 0 1.5rem;
+  font-weight: bold;
 }
-.navigation-Light a {
-  padding: 0 1.5rem;
+.navigation-Dark a:hover{
+  color: rgba(245, 245, 245, 0.445);
 }
-
-
+.navigation-Light a:hover{
+  color: rgba(0, 0, 0, 0.445);
+}
 .navigation-Dark ul a li{
   text-decoration: none;
   flex-direction: column;
@@ -209,8 +220,36 @@ nav{
   align-items: center;
   display: flex;
 }
+/* contacts */
+
 
 .contacts{
   height: 100vh;
 }
 
+
+/* Portofolio */
+
+.Portofolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(0,113,176);
+background: radial-gradient(circle, rgba(0,113,176,1) 0%, rgba(0,52,103,1) 100%);
+border-top: 2px solid silver;
+}
+
+.Portofolio h2{
+  color: whitesmoke;
+  padding: 5rem 0rem 0rem 0rem;
+  font-size: 3rem;
+
+}
+
+/* footer */
+.footer{
+  background-color: black;
+  margin-top: 0;
+  border-top: silver 2px solid;
+  color: whitesmoke;
+}

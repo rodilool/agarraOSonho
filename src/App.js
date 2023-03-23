@@ -8,12 +8,16 @@ import { BrowserRouter as Router, Route, Routes, Switch, NavLink } from 'react-r
 
 import Welcome from './Components/navigation/welcome/welcome';
 import Contacts from './Components/contacts/contacts';
+import Portofolio from './Components/portofolio/portofolio';
+import Footer from './Components/footer/footer.js';
 
 
 function App() {
 
   const [theme, setTheme] = useState('Light');
   // localStorage.clear()
+  // It will store the theme that the user selects so once they refresh they dont go back to default
+
   const clickChangeTheme = () => {
     if(theme === 'Light') {
       setTheme('Dark')
@@ -27,12 +31,12 @@ function App() {
   let storedTheme = localStorage.getItem('theme');
   let saveTheme = JSON.parse(storedTheme);
 
-
+// It wil choose the logo depending on what theme user is on
   const themeIcon = saveTheme === 'Light' ? <img src={sunLogo} className="themeLogo" onClick={clickChangeTheme}></img> : <img src={moonLogo} className="themeLogo" onClick={clickChangeTheme}></img>
 
   return (   
-        <div className={`landing-${saveTheme} ${saveTheme} backGround`}>  
-        <div>
+        <div className={`text-${saveTheme}`}>  
+        <div className={`landing-${saveTheme} ${saveTheme} backGround`}>
         <nav>
             <div>
                 
@@ -45,18 +49,24 @@ function App() {
                         {themeIcon}
                       </div>
                         <a href='#home' className='firstNav'><li>Home</li></a>
-                        <a to='./prices' className='middleNav'><li>Portofolio</li></a>
+                        <a href='#portfolio' className='middleNav'><li>Portofolio</li></a>
                         <a href='#contacts' className='lastNav'><li>Contacto</li></a>
                     </ul>
                 </div>
 
         </nav>
          <Welcome />
-        </div>
+        </div>         
+          <div className={`Portofolio`}  id='portfolio'>
+            <h2>Portfolio</h2>
+            <Portofolio />
+          </div>
           <div className={`contacts ${saveTheme} backGround`}>
             <Contacts theme={saveTheme}/>
           </div>
-        
+          <div className='footer'>
+            <Footer/>
+          </div>
         </div>
   );
 }

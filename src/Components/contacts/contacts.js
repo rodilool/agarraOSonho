@@ -20,11 +20,11 @@ export default class Contacts extends Component {
         }
     }
     onSubmit(event) {
+        event.preventDefault();
         alert('Form Sent!')
         var frm = document.getElementById('form')
         frm.submit()
         frm.reset()
-        event.preventDefault();
 
     }
     render(){

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './welcome.css'
-import workerImage from 'C:/codeacademy/agarra-o-sonho/src/pics/industrial_worker_PNG11441.png'
+import workerImage from '../../../pics/industrial_worker_PNG11441.png'
 
 export default class Welcome extends Component {
   render() {

@@ -48,10 +48,35 @@ function App() {
                         <p>{saveTheme} Theme</p>
                         {themeIcon}
                       </div>
-                        <a href='#home' className='firstNav'><li>Home</li></a>
+                        <a href='#home' className='firstNav'><li>Sobre</li></a>
                         <a href='#portfolio' className='middleNav'><li>Portofolio</li></a>
                         <a href='#contacts' className='lastNav'><li>Contacto</li></a>
                     </ul>
+                </div>
+                <div className={`menu-${saveTheme}`}>
+                  <div className='centerdiv'>
+                    <h1>AgarraOSonho</h1>
+                  </div>
+                  <nav className='nav'>
+                      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+                      <label id={`hamburger-menu-${saveTheme}`} for="hamburger-input">
+                      <nav id={`sidebar-menu-${saveTheme}`}>
+                          <h3>Menu</h3>
+                          <p className='exit'>X</p>
+                          <ul>
+                          <a href="#home"><li>Sobre</li></a>
+                          <a href="#portfolio"><li>Portfolio</li></a>
+                          <a href="#contacts"><li>Contacto</li></a>
+                          <div className='changeTheme' onClick={clickChangeTheme}> 
+                            <p>{saveTheme} Theme</p>
+                            {themeIcon}
+                          </div>
+                          </ul>
+                      </nav>
+                      </label>
+
+                      <div class="overlay"></div>
+                  </nav>
                 </div>
 
         </nav>
